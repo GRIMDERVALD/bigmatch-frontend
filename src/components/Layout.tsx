@@ -1,5 +1,6 @@
 import React from 'react';
-import { Basketball } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Trophy } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,25 +9,40 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header mobile-first */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="container-mobile py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-basketball-orange rounded-lg">
-              <Basketball className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">BIGMATCH</h1>
-              <p className="text-xs text-gray-500">Basketball Match App</p>
-            </div>
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="bg-blue-600 p-2 rounded-lg">
+                <Trophy className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-xl font-bold text-gray-900">BIGMATCH</span>
+            </Link>
           </div>
         </div>
       </header>
 
-      {/* Main content */}
-      <main className="pb-20">
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {children}
       </main>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 mt-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-2 mb-2">
+              <div className="bg-blue-600 p-1 rounded">
+                <Trophy className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-sm text-gray-600">
+                © 2024 BIGMATCH. Organisez vos tournois facilement.
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
