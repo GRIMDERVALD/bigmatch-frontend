@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Trophy, Users, Calendar, MapPin, Play } from 'lucide-react';
+import { Trophy, Users, Calendar, Play } from 'lucide-react';
 import { Button, Input, Card, Alert } from '../components/ui';
 import { tournamentApi } from '../services/api';
 
